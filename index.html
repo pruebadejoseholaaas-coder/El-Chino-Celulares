@@ -1,1 +1,2516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>El Chino Celulares | Santiago de los Caballeros</title>
+
+<meta name="description"
+content="El Chino Celulares. Tienda de móviles en Santiago de los Caballeros. Compra en tienda, retiro y entrega a domicilio.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --black:#05070a;
+    --black-2:#090d12;
+    --panel:#0e141b;
+
+    --blue:#1683ff;
+    --blue-light:#49a3ff;
+    --cyan:#20d9ff;
+
+    --white:#f5f8fc;
+    --gray:#8d99a8;
+    --gray-light:#c8d0d9;
+
+    --border:rgba(255,255,255,.09);
+
+    --container:1180px;
+
+    --font:"Inter",sans-serif;
+    --display:"Space Grotesk",sans-serif;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:var(--black);
+
+    color:var(--white);
+
+    font-family:var(--font);
+
+    overflow-x:hidden;
+
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+
+    width:min(calc(100% - 40px),var(--container));
+
+    margin:auto;
+
+}
+
+
+/* =========================================================
+   BACKGROUND EFFECT
+========================================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:650px;
+    height:650px;
+
+    top:-300px;
+    right:-200px;
+
+    background:radial-gradient(
+        circle,
+        rgba(22,131,255,.18),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:1000;
+
+    height:76px;
+
+    background:rgba(5,7,10,.72);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid transparent;
+
+    transition:.3s;
+
+}
+
+header.scrolled{
+
+    background:rgba(5,7,10,.94);
+
+    border-color:var(--border);
+
+}
+
+.nav{
+
+    height:76px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    font-family:var(--display);
+
+    font-size:19px;
+
+    font-weight:700;
+
+    letter-spacing:-.04em;
+
+}
+
+.logo-icon{
+
+    width:34px;
+    height:34px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--cyan)
+    );
+
+    color:white;
+
+    font-size:17px;
+
+    box-shadow:
+        0 0 25px rgba(22,131,255,.35);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    color:var(--gray);
+
+    font-size:10px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:.1em;
+
+}
+
+.nav-links a{
+
+    transition:.25s;
+
+}
+
+.nav-links a:hover{
+
+    color:white;
+
+}
+
+.nav-call{
+
+    padding:11px 18px;
+
+    border:1px solid rgba(22,131,255,.6);
+
+    color:white !important;
+
+    background:rgba(22,131,255,.08);
+
+}
+
+.menu{
+
+    display:none;
+
+    border:0;
+
+    background:none;
+
+    cursor:pointer;
+
+}
+
+.menu span{
+
+    display:block;
+
+    width:24px;
+
+    height:2px;
+
+    margin:5px;
+
+    background:white;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    padding-top:76px;
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    left:-300px;
+    bottom:-300px;
+
+    border-radius:50%;
+
+    background:rgba(32,217,255,.09);
+
+    filter:blur(20px);
+
+}
+
+.hero-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:80px 50px 80px max(20px,calc((100vw - 1180px)/2));
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    width:max-content;
+
+    padding:8px 12px;
+
+    border:1px solid rgba(73,163,255,.25);
+
+    background:rgba(22,131,255,.07);
+
+    color:#74bbff;
+
+    border-radius:100px;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.16em;
+
+}
+
+.badge-dot{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#31e17f;
+
+    box-shadow:0 0 10px #31e17f;
+
+}
+
+.hero h1{
+
+    margin-top:24px;
+
+    font-family:var(--display);
+
+    font-size:clamp(48px,6vw,83px);
+
+    line-height:.93;
+
+    letter-spacing:-.07em;
+
+    font-weight:700;
+
+}
+
+.hero h1 span{
+
+    background:linear-gradient(
+        100deg,
+        #fff,
+        #52aaff,
+        #20d9ff
+    );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.hero-text{
+
+    max-width:490px;
+
+    margin-top:28px;
+
+    color:var(--gray);
+
+    font-size:13px;
+
+    line-height:1.85;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:34px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    min-height:48px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:0 21px;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.1em;
+
+    border-radius:7px;
+
+    transition:.3s;
+
+}
+
+.btn-blue{
+
+    background:var(--blue);
+
+    color:white;
+
+    box-shadow:
+        0 8px 25px rgba(22,131,255,.22);
+
+}
+
+.btn-blue:hover{
+
+    transform:translateY(-3px);
+
+    background:#2a91ff;
+
+    box-shadow:
+        0 12px 35px rgba(22,131,255,.35);
+
+}
+
+.btn-dark{
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.025);
+
+    color:white;
+
+}
+
+.btn-dark:hover{
+
+    border-color:rgba(73,163,255,.5);
+
+    background:rgba(22,131,255,.06);
+
+}
+
+.hero-meta{
+
+    margin-top:48px;
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.meta{
+
+    border-left:1px solid rgba(73,163,255,.4);
+
+    padding-left:13px;
+
+}
+
+.meta strong{
+
+    display:block;
+
+    font-family:var(--display);
+
+    font-size:20px;
+
+}
+
+.meta span{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:var(--gray);
+
+    font-size:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.1em;
+
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual{
+
+    min-height:calc(100vh - 76px);
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#080d13;
+
+}
+
+.hero-visual::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--black),
+            transparent 35%
+        );
+
+    z-index:2;
+
+    pointer-events:none;
+
+}
+
+.hero-visual img{
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    opacity:.82;
+
+    filter:saturate(.8) contrast(1.08);
+
+}
+
+.visual-card{
+
+    position:absolute;
+
+    right:30px;
+
+    bottom:30px;
+
+    z-index:4;
+
+    width:230px;
+
+    padding:18px;
+
+    border:1px solid rgba(255,255,255,.13);
+
+    background:rgba(7,11,16,.72);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:12px;
+
+}
+
+.visual-card-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    color:var(--gray);
+
+    font-size:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.1em;
+
+}
+
+.visual-card h3{
+
+    margin-top:12px;
+
+    font-family:var(--display);
+
+    font-size:16px;
+
+}
+
+.visual-card p{
+
+    margin-top:7px;
+
+    color:var(--gray);
+
+    font-size:9px;
+
+    line-height:1.6;
+
+}
+
+.signal{
+
+    color:#31e17f;
+
+}
+
+
+/* =========================================================
+   SECTION BASE
+========================================================= */
+
+.section{
+
+    padding:115px 0;
+
+}
+
+.section-label{
+
+    color:#51aaff;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.2em;
+
+}
+
+.section-title{
+
+    margin-top:13px;
+
+    font-family:var(--display);
+
+    font-size:clamp(38px,5vw,60px);
+
+    line-height:.98;
+
+    letter-spacing:-.055em;
+
+}
+
+.section-description{
+
+    max-width:520px;
+
+    margin-top:18px;
+
+    color:var(--gray);
+
+    font-size:12px;
+
+    line-height:1.85;
+
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services{
+
+    background:var(--black-2);
+
+    border-top:1px solid var(--border);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.service-grid{
+
+    margin-top:55px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+
+}
+
+.service{
+
+    min-height:240px;
+
+    padding:30px;
+
+    border:1px solid var(--border);
+
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.035),
+        rgba(255,255,255,.012)
+    );
+
+    border-radius:13px;
+
+    transition:.35s;
+
+}
+
+.service:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(22,131,255,.4);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+
+}
+
+.service-icon{
+
+    width:43px;
+    height:43px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    background:rgba(22,131,255,.1);
+
+    color:#58adff;
+
+    font-size:18px;
+
+}
+
+.service h3{
+
+    margin-top:25px;
+
+    font-family:var(--display);
+
+    font-size:21px;
+
+}
+
+.service p{
+
+    margin-top:10px;
+
+    color:var(--gray);
+
+    font-size:11px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery{
+
+    background:#070a0e;
+
+}
+
+.gallery-head{
+
+    display:flex;
+
+    align-items:end;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+}
+
+.gallery-head .section-description{
+
+    margin:0;
+
+}
+
+.gallery-grid{
+
+    margin-top:55px;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:14px;
+
+}
+
+.gallery-main{
+
+    height:680px;
+
+    overflow:hidden;
+
+    border-radius:14px;
+
+    position:relative;
+
+}
+
+.gallery-main img{
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+
+}
+
+.gallery-main:hover img{
+
+    transform:scale(1.04);
+
+}
+
+.gallery-side{
+
+    display:grid;
+
+    grid-template-rows:1fr 1fr;
+
+    gap:14px;
+
+}
+
+.gallery-item{
+
+    overflow:hidden;
+
+    border-radius:14px;
+
+}
+
+.gallery-item img{
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.04);
+
+}
+
+.gallery-tag{
+
+    position:absolute;
+
+    left:20px;
+
+    bottom:20px;
+
+    padding:8px 12px;
+
+    background:rgba(5,7,10,.82);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid var(--border);
+
+    border-radius:5px;
+
+    color:#a8d5ff;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.12em;
+
+}
+
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.reviews{
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(22,131,255,.08),
+            transparent 30%
+        ),
+        var(--black-2);
+
+}
+
+.rating-box{
+
+    margin-top:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    padding:25px;
+
+    width:max-content;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.025);
+
+    border-radius:12px;
+
+}
+
+.rating-number{
+
+    font-family:var(--display);
+
+    font-size:53px;
+
+    font-weight:700;
+
+}
+
+.stars{
+
+    color:#ffc64d;
+
+    letter-spacing:3px;
+
+}
+
+.rating-label{
+
+    margin-top:5px;
+
+    color:var(--gray);
+
+    font-size:9px;
+
+}
+
+.review-grid{
+
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+
+}
+
+.review{
+
+    padding:30px;
+
+    min-height:250px;
+
+    border:1px solid var(--border);
+
+    background:#0b1016;
+
+    border-radius:13px;
+
+}
+
+.review-stars{
+
+    color:#ffc64d;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+}
+
+.review p{
+
+    margin-top:22px;
+
+    color:#d2d9e1;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+}
+
+.review-author{
+
+    margin-top:25px;
+
+    color:#64b2ff;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.1em;
+
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location{
+
+    background:#05080c;
+
+}
+
+.location-grid{
+
+    margin-top:55px;
+
+    display:grid;
+
+    grid-template-columns:.85fr 1.15fr;
+
+    gap:18px;
+
+}
+
+.location-info{
+
+    padding:35px;
+
+    border:1px solid var(--border);
+
+    background:#0b1016;
+
+    border-radius:13px;
+
+}
+
+.info-row{
+
+    padding:22px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.info-row:last-child{
+
+    border-bottom:0;
+
+}
+
+.info-label{
+
+    color:#4ba8ff;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.15em;
+
+}
+
+.info-value{
+
+    margin-top:8px;
+
+    color:#d6dce4;
+
+    font-size:12px;
+
+    line-height:1.7;
+
+}
+
+.info-value a:hover{
+
+    color:#55adff;
+
+}
+
+.map{
+
+    min-height:520px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    border-radius:13px;
+
+}
+
+.map iframe{
+
+    width:100%;
+
+    height:100%;
+
+    min-height:520px;
+
+    border:0;
+
+    filter:grayscale(.25) contrast(1.1);
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+    position:relative;
+
+    padding:115px 20px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(22,131,255,.18),
+            transparent 45%
+        ),
+
+        #07101a;
+
+    border-top:1px solid var(--border);
+
+}
+
+.cta::before{
+
+    content:"MÓVILES";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    font-family:var(--display);
+
+    font-size:clamp(100px,18vw,270px);
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.018);
+
+    white-space:nowrap;
+
+    pointer-events:none;
+
+}
+
+.cta-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.cta h2{
+
+    margin-top:15px;
+
+    font-family:var(--display);
+
+    font-size:clamp(42px,6vw,72px);
+
+    line-height:.95;
+
+    letter-spacing:-.06em;
+
+}
+
+.cta p{
+
+    max-width:560px;
+
+    margin:20px auto 0;
+
+    color:var(--gray);
+
+    font-size:12px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:35px 0;
+
+    background:#030507;
+
+    border-top:1px solid var(--border);
+
+}
+
+.footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.footer-logo{
+
+    font-family:var(--display);
+
+    font-size:17px;
+
+    font-weight:700;
+
+}
+
+.footer-copy{
+
+    color:#66717e;
+
+    font-size:8px;
+
+}
+
+.footer-phone{
+
+    color:#5aafff;
+
+    font-size:9px;
+
+    font-weight:700;
+
+}
+
+
+/* =========================================================
+   FLOAT BUTTON
+========================================================= */
+
+.float-contact{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:2000;
+
+    width:58px;
+    height:58px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        #0064d6
+    );
+
+    color:white;
+
+    font-size:20px;
+
+    box-shadow:
+        0 10px 35px rgba(22,131,255,.35);
+
+    transition:.3s;
+
+}
+
+.float-contact:hover{
+
+    transform:translateY(-4px) scale(1.04);
+
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+
+        opacity .7s ease,
+
+        transform .7s ease;
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+
+        position:fixed;
+
+        top:76px;
+
+        left:15px;
+        right:15px;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+        padding:25px;
+
+        background:#0b1016;
+
+        border:1px solid var(--border);
+
+        border-radius:12px;
+
+        box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-content{
+
+        padding:110px 20px 70px;
+
+    }
+
+    .hero-visual{
+
+        min-height:600px;
+
+    }
+
+    .service-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .review-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-main{
+
+        height:550px;
+
+    }
+
+    .location-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .container{
+
+        width:calc(100% - 30px);
+
+    }
+
+    header,
+    .nav{
+
+        height:68px;
+
+    }
+
+    .nav-links{
+
+        top:68px;
+
+    }
+
+    .logo{
+
+        font-size:16px;
+
+    }
+
+    .logo-icon{
+
+        width:30px;
+        height:30px;
+
+    }
+
+    .hero{
+
+        padding-top:68px;
+
+    }
+
+    .hero-content{
+
+        padding:90px 15px 60px;
+
+    }
+
+    .hero h1{
+
+        font-size:54px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+    .hero-meta{
+
+        gap:20px;
+
+    }
+
+    .meta strong{
+
+        font-size:17px;
+
+    }
+
+    .hero-visual{
+
+        min-height:520px;
+
+    }
+
+    .visual-card{
+
+        left:15px;
+        right:15px;
+
+        bottom:15px;
+
+        width:auto;
+
+    }
+
+    .section{
+
+        padding:85px 0;
+
+    }
+
+    .gallery-head{
+
+        display:block;
+
+    }
+
+    .gallery-head .section-description{
+
+        margin-top:18px;
+
+    }
+
+    .gallery-main{
+
+        height:500px;
+
+    }
+
+    .gallery-side{
+
+        display:block;
+
+    }
+
+    .gallery-item{
+
+        height:350px;
+
+        margin-top:14px;
+
+    }
+
+    .rating-box{
+
+        width:100%;
+
+    }
+
+    .location-info{
+
+        padding:25px;
+
+    }
+
+    .map,
+    .map iframe{
+
+        min-height:400px;
+
+    }
+
+    .footer{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header id="header">
+
+<div class="container nav">
+
+<a href="#inicio" class="logo">
+
+<span class="logo-icon">▣</span>
+
+El Chino Celulares
+
+</a>
+
+
+<nav class="nav-links" id="navLinks">
+
+<a href="#inicio">Inicio</a>
+
+<a href="#servicios">Servicios</a>
+
+<a href="#galeria">Galería</a>
+
+<a href="#resenas">Reseñas</a>
+
+<a href="#ubicacion">Ubicación</a>
+
+<a
+href="tel:+18098473335"
+class="nav-call"
+>
+Llamar
+</a>
+
+</nav>
+
+
+<button class="menu" id="menuButton">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="inicio">
+
+
+<div class="hero-content reveal">
+
+<div class="badge">
+
+<span class="badge-dot"></span>
+
+Tienda de móviles · Santiago
+
+</div>
+
+
+<h1>
+
+Tu próximo<br>
+
+<span>móvil está aquí.</span>
+
+</h1>
+
+
+<p class="hero-text">
+
+Descubre El Chino Celulares, una tienda de móviles
+en Santiago de los Caballeros con una valoración
+de 5.0 estrellas y más de 55 reseñas de clientes.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#servicios"
+class="btn btn-blue"
+>
+Ver servicios
+</a>
+
+
+<a
+href="tel:+18098473335"
+class="btn btn-dark"
+>
+📞 +1 809-847-3335
+</a>
+
+</div>
+
+
+<div class="hero-meta">
+
+<div class="meta">
+
+<strong>5.0</strong>
+
+<span>Valoración</span>
+
+</div>
+
+
+<div class="meta">
+
+<strong>55+</strong>
+
+<span>Reseñas</span>
+
+</div>
+
+
+<div class="meta">
+
+<strong>RD</strong>
+
+<span>Santiago</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="hero-visual">
+
+<img
+src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnJDqJ2688s3osrQG7BjrqY8C9h4ie8OJtMvM2sxrmIzFrz_DUGWu6mi6jIarT09X1ToPdwaq_DPX54BAknQbWL6LKx6Vx8pUfu_5B09cbkfsIyTG_A80xoG2fRLlmjUsnzEjClgg=w900-h1600-k-no"
+alt="El Chino Celulares"
+>
+
+
+<div class="visual-card">
+
+<div class="visual-card-top">
+
+<span>Estado</span>
+
+<span class="signal">
+● Abierto
+</span>
+
+</div>
+
+<h3>
+Atención en tienda
+</h3>
+
+<p>
+Compras en tienda, retiro y
+entrega a domicilio disponibles.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="section services" id="servicios">
+
+<div class="container">
+
+
+<div class="reveal">
+
+<div class="section-label">
+Lo que ofrecemos
+</div>
+
+<h2 class="section-title">
+Todo para tu<br>
+mundo móvil.
+</h2>
+
+<p class="section-description">
+
+El perfil del negocio indica diferentes opciones
+para adquirir tus productos y recibirlos de la forma
+que mejor se adapte a ti.
+
+</p>
+
+</div>
+
+
+
+<div class="service-grid">
+
+
+<article class="service reveal">
+
+<div class="service-icon">
+⌁
+</div>
+
+<h3>
+Compra en tienda
+</h3>
+
+<p>
+Visita el establecimiento y conoce
+directamente los productos disponibles.
+</p>
+
+</article>
+
+
+<article class="service reveal">
+
+<div class="service-icon">
+↗
+</div>
+
+<h3>
+Retiro en tienda
+</h3>
+
+<p>
+El negocio dispone de opción de
+retiro en tienda.
+</p>
+
+</article>
+
+
+<article class="service reveal">
+
+<div class="service-icon">
+⌁
+</div>
+
+<h3>
+Entrega a domicilio
+</h3>
+
+<p>
+Recibe tus compras mediante el
+servicio de entrega a domicilio.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     GALLERY
+========================================================= -->
+
+<section class="section gallery" id="galeria">
+
+<div class="container">
+
+
+<div class="gallery-head reveal">
+
+<div>
+
+<div class="section-label">
+Galería
+</div>
+
+<h2 class="section-title">
+Conoce<br>
+la tienda.
+</h2>
+
+</div>
+
+
+<p class="section-description">
+
+Una selección de imágenes publicadas
+del establecimiento y su interior.
+
+</p>
+
+</div>
+
+
+
+<div class="gallery-grid">
+
+
+<div class="gallery-main reveal">
+
+<img
+src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnJDqJ2688s3osrQG7BjrqY8C9h4ie8OJtMvM2sxrmIzFrz_DUGWu6mi6jIarT09X1ToPdwaq_DPX54BAknQbWL6LKx6Vx8pUfu_5B09cbkfsIyTG_A80xoG2fRLlmjUsnzEjClgg=w900-h1600-k-no"
+alt="El Chino Celulares"
+>
+
+<div class="gallery-tag">
+El Chino Celulares
+</div>
+
+</div>
+
+
+<div class="gallery-side">
+
+
+<div class="gallery-item reveal">
+
+<img
+src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnuUmF2QIrrDDSa3qt_CJFvnE7_9kEhrjWfMoXZWSaWKm6HhYgFbA-Ty8Vu9Hz25_JbCUsiZ-ETyGCSKAxr9D8IKJC6eBjqYjveLeZnJgbGte1zdx-EUv-JGAdgAhOtvsRmIolD84SO2gs1=w900-h507-k-no"
+alt="El Chino Celulares"
+>
+
+</div>
+
+
+<div class="gallery-item reveal">
+
+<img
+src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnLVghHwatuKW8tIk9ToJxYp56hsNJZTIz0So3IE5eisRJtKV0eHCr7QMb5BzpfNW2m_Dhk4YY4o6Ypd7rzEeLIDiHVyH3cF3TudcWU4hVfWAqnyQ-cuOcPvL1_NJMVrfm9AzJ1xw=w700-h1200-k-no"
+alt="Interior de El Chino Celulares"
+>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     REVIEWS
+========================================================= -->
+
+<section class="section reviews" id="resenas">
+
+<div class="container">
+
+
+<div class="reveal">
+
+<div class="section-label">
+Opiniones reales
+</div>
+
+<h2 class="section-title">
+55 razones<br>
+para confiar.
+</h2>
+
+
+<div class="rating-box">
+
+<div class="rating-number">
+5.0
+</div>
+
+<div>
+
+<div class="stars">
+★★★★★
+</div>
+
+<div class="rating-label">
+55 reseñas en Google
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="review-grid">
+
+
+<article class="review reveal">
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p>
+
+“Excelente servicio y calidad.”
+
+</p>
+
+<div class="review-author">
+La Negra
+</div>
+
+</article>
+
+
+
+<article class="review reveal">
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p>
+
+“Muy buen servicio.”
+
+</p>
+
+<div class="review-author">
+Manuela C. Cosme Jimenez
+</div>
+
+</article>
+
+
+
+<article class="review reveal">
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p>
+
+“El Chino Celulares es una empresa que
+se caracteriza por la oferta de productos
+de gran calidad. El servicio es muy eficiente.”
+
+</p>
+
+<div class="review-author">
+Nicanor Hernandez
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LOCATION
+========================================================= -->
+
+<section class="section location" id="ubicacion">
+
+<div class="container">
+
+
+<div class="reveal">
+
+<div class="section-label">
+Dónde encontrarnos
+</div>
+
+<h2 class="section-title">
+Visítanos en<br>
+Santiago.
+</h2>
+
+</div>
+
+
+
+<div class="location-grid">
+
+
+<div class="location-info reveal">
+
+
+<div class="info-row">
+
+<div class="info-label">
+Dirección
+</div>
+
+<div class="info-value">
+
+Plaza, C. Antonio P. Haché,
+Santiago de los Caballeros 51000,
+República Dominicana.
+
+<br><br>
+
+Se encuentra en:
+<strong>Plaza Hache</strong>
+
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Horario
+</div>
+
+<div class="info-value">
+
+Abierto · Cierra a las 5:00 p.m.
+
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Teléfono
+</div>
+
+<div class="info-value">
+
+<a href="tel:+18098473335">
++1 809-847-3335
+</a>
+
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Ubicación
+</div>
+
+<div class="info-value">
+
+F897+G8 Santiago de los Caballeros,
+República Dominicana
+
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Red social
+</div>
+
+<div class="info-value">
+
+<a
+href="https://www.facebook.com/capsula1523"
+target="_blank"
+rel="noopener"
+>
+Facebook · @capsula1523
+</a>
+
+</div>
+
+</div>
+
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=El%20Chino%20Celulares%2C%20Plaza%20Hache%2C%20Santiago%20de%20los%20Caballeros"
+target="_blank"
+rel="noopener"
+class="btn btn-blue"
+style="margin-top:25px;width:100%;"
+>
+Cómo llegar con Google Maps
+</a>
+
+</div>
+
+
+
+<div class="map reveal">
+
+<iframe
+
+src="https://www.google.com/maps?q=El%20Chino%20Celulares%2C%20Plaza%20Hache%2C%20Santiago%20de%20los%20Caballeros%2C%20Rep%C3%BAblica%20Dominicana&output=embed"
+
+loading="lazy"
+
+allowfullscreen
+
+referrerpolicy="no-referrer-when-downgrade">
+
+</iframe>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta">
+
+<div class="container cta-content reveal">
+
+<div class="section-label">
+El Chino Celulares
+</div>
+
+<h2>
+¿Buscas tu<br>
+próximo celular?
+</h2>
+
+<p>
+
+Llama a la tienda para consultar por
+productos disponibles, precios y opciones
+de compra.
+
+</p>
+
+
+<div class="hero-buttons" style="justify-content:center;">
+
+<a
+href="tel:+18098473335"
+class="btn btn-blue"
+>
+📞 Llamar ahora
+</a>
+
+<a
+href="#ubicacion"
+class="btn btn-dark"
+>
+📍 Ver ubicación
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<div class="container footer">
+
+<div class="footer-logo">
+El Chino Celulares
+</div>
+
+<div class="footer-copy">
+
+© <span id="year"></span> · Santiago de los Caballeros · República Dominicana
+
+</div>
+
+<a
+href="tel:+18098473335"
+class="footer-phone"
+>
++1 809-847-3335
+</a>
+
+</div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     FLOAT CALL BUTTON
+========================================================= -->
+
+<a
+href="tel:+18098473335"
+class="float-contact"
+aria-label="Llamar a El Chino Celulares"
+>
+☎
+</a>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* HEADER */
+
+const header =
+document.getElementById("header");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 30){
+
+        header.classList.add("scrolled");
+
+    }else{
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* MOBILE MENU */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuButton.addEventListener("click",()=>{
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* SCROLL REVEAL */
+
+const elements =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.12
+}
+
+);
+
+
+elements.forEach(element=>{
+
+    observer.observe(element);
+
+});
+
+
+/* YEAR */
+
+document.getElementById("year")
+.textContent = new Date().getFullYear();
+
+</script>
+
+
+</body>
+</html>
